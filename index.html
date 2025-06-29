@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일차함수 학습기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>일차함수 학습기</h1>
+        <div class="main-content">
+            <div class="controls-container">
+                <div class="function-controls">
+                    <h2>첫 번째 함수: y = ax + b</h2>
+                    <div class="controls">
+                        <div class="slider-container">
+                            <label for="slope">기울기 (a): <span id="slopeValue">1</span></label>
+                            <input type="range" id="slope" min="-100" max="100" step="0.1" value="1">
+                            <div class="input-container">
+                                <input type="number" id="slopeInput" value="1" step="0.1">
+                            </div>
+                        </div>
+                        <div class="slider-container">
+                            <label for="yIntercept">y절편 (b): <span id="yInterceptValue">0</span></label>
+                            <input type="range" id="yIntercept" min="-1000" max="1000" step="1" value="0">
+                            <div class="input-container">
+                                <input type="number" id="yInterceptInput" value="0" step="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="addSecondFunction" class="add-function-btn">두 번째 함수 추가하기</button>
+
+                <div id="secondFunctionControls" class="function-controls" style="display: none;">
+                    <h2>두 번째 함수: y = cx + d</h2>
+                    <div class="controls">
+                        <div class="slider-container">
+                            <label for="slope2">기울기 (c): <span id="slope2Value">1</span></label>
+                            <input type="range" id="slope2" min="-100" max="100" step="0.1" value="1">
+                            <div class="input-container">
+                                <input type="number" id="slope2Input" value="1" step="0.1">
+                            </div>
+                        </div>
+                        <div class="slider-container">
+                            <label for="yIntercept2">y절편 (d): <span id="yIntercept2Value">0</span></label>
+                            <input type="range" id="yIntercept2" min="-1000" max="1000" step="1" value="0">
+                            <div class="input-container">
+                                <input type="number" id="yInterceptInput2" value="0" step="1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="intersectionPoint" class="intersection-info" style="display: none;">
+                    <h3>교점 좌표</h3>
+                    <p>(<span id="intersectionX">0</span>, <span id="intersectionY">0</span>)</p>
+                </div>
+            </div>
+
+            <div class="graph-container">
+                <canvas id="graphCanvas"></canvas>
+                <div id="firstEquation" class="function-equation first"></div>
+                <div id="secondEquation" class="function-equation second" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
